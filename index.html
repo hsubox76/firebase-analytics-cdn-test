@@ -1,0 +1,125 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Firebase Analytics Test Page</title>
+
+    <style media="screen">
+      body {
+        background: #eceff1;
+        color: rgba(0, 0, 0, 0.87);
+        font-family: Roboto, Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      #message {
+        background: white;
+        max-width: 800px;
+        margin: 40px auto 16px;
+        padding: 32px 24px 16px;
+        border-radius: 3px;
+      }
+      #message h3 {
+        color: #888;
+        font-weight: normal;
+        font-size: 16px;
+        margin: 16px 0 12px;
+      }
+      #message h2 {
+        color: #ffa100;
+        font-weight: bold;
+        font-size: 20px;
+        margin: 0 0 8px;
+      }
+      #message h1 {
+        font-size: 36px;
+        font-weight: 300;
+        color: rgba(0, 0, 0, 0.6);
+        margin: 0 0 16px;
+      }
+      #message p,
+      li {
+        line-height: 140%;
+        margin: 16px 0 24px;
+        font-size: 16px;
+      }
+      #message a {
+        display: block;
+        text-align: center;
+        background: #039be5;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: white;
+        padding: 16px;
+        border-radius: 4px;
+      }
+      #message,
+      #message a {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      }
+      @media (max-width: 600px) {
+        body,
+        #message {
+          margin-top: 0;
+          background: white;
+          box-shadow: none;
+        }
+        body {
+          border-top: 16px solid #ffa100;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message">
+      <h1>Firebase Analytics Test Page (Firebase 7.14.2)</h1>
+      <h2>Last updated Apr 27 2020</h2>
+
+      <p>
+        This page is hosted on Firebase Hosting using automatic config
+        ("/__firebase/init.js") and uses the CDN versions of the Firebase
+        library ("/__/firebase/7.14.2/firebase-app.js", etc.).
+      </p>
+
+      <hr />
+
+      <p>To check if the client is sending events to the server:</p>
+      <ol>
+        <li>
+          Open your browser's Developer Tools panel.
+        </li>
+        <li>
+          Go to the Network tab.
+        </li>
+        <li>
+          Refresh this page.
+        </li>
+        <li>
+          Look for a network POST request (it will be delayed a few seconds
+          after page load) to "https://www.google-analytics.com/g/collect?...
+          (plus a lot of params)"
+        </li>
+      </ol>
+
+      <hr />
+      <p>
+        If that network request is <strong>successful</strong> (200, 204), Firebase analytics is
+        sending events. One of the params should be "en=page_view". This event
+        is automatically sent on page view even if you did not explicitly log an
+        event with Firebase Analytics.
+      </p>
+      <p>
+        If that network request is <strong>not there</strong>, or was <strong>unsuccessful</strong>, please let us
+        know as much detail as possible about the browser environment you
+        checked this page from.
+      </p>
+    </div>
+
+    <script src="/__/firebase/7.14.2/firebase-app.js"></script>
+    <script src="/__/firebase/7.14.2/firebase-analytics.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script>
+      firebase.analytics();
+    </script>
+  </body>
+</html>
